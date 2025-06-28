@@ -861,67 +861,47 @@ const Guide = () => (
       <h1 className="text-3xl font-bold text-indigo-400 mb-4">VRS/A User Walkthrough Guide</h1>
       
       <h2 className="text-xl font-semibold text-slate-200 mb-2">Welcome to VRS/A - Your AI Ghostwriter</h2>
-      <p className="text-slate-300 mb-6">VRS/A is an advanced AI lyric generator that channels specific artists' styles to create authentic-sounding, original lyrics. This tour will show you how to get the most out of both the Ghostwriter and Sandbox modes.</p>
+      <p className="text-slate-300 mb-4">Built by one guy, running on fumes, vibes, and a couple tips. VRS/A is your lyric engine for bending styles, moods, and rhyme forms into something that doesn’t sound like it was grown in a lab.</p>
+
+      <p className="text-slate-400 mb-6 text-sm italic">Like it? Help keep it free: <a href="https://coff.ee/vrsa" target="_blank" rel="noopener noreferrer" className="underline text-yellow-400 hover:text-yellow-300">BuyMeaCoffee</a> or Cash App <span className="font-mono text-green-400">$chrisdickinson02</span>.</p>
 
       <h2 className="text-xl font-semibold text-slate-200 mb-2">Ghostwriter Mode Tour</h2>
-      
+
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 1: Navigation</h3>
-      <p className="text-slate-300 mb-4"><strong>Choose Your Mode</strong><br />Use the navigation buttons at the top to switch between:<br />- <strong>Ghostwriter</strong>: Conversational AI that creates complete song sections<br />- <strong>Sandbox</strong>: Advanced structured lyric building with precise control</p>
-      
+      <p className="text-slate-300 mb-4">Use the nav up top to switch between:<br />- <strong>Ghostwriter</strong>: Full sections with guided inputs<br />- <strong>Sandbox</strong>: Build songs piece-by-piece, precision-style</p>
+
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 2: Structured Input Form</h3>
-      <p className="text-slate-300 mb-4"><strong>Artist & Theme Setup</strong><br />The left sidebar contains your creative controls:<br />- <strong>Artist Name</strong>: Enter any artist (e.g., "Frank Ocean", "Kendrick Lamar") or style description<br />- <strong>Core Theme</strong>: Describe what your song is about in one sentence<br />- <strong>Mood Tag</strong>: Set the emotional tone (melancholy, triumphant, etc.)<br />- <strong>Length</strong>: Choose from short snippets to full songs</p>
-      
+      <p className="text-slate-300 mb-4">Left panel. Set:<br />- <strong>Artist Name</strong><br />- <strong>Core Theme</strong><br />- <strong>Mood</strong><br />- <strong>Length</strong><br />You know the drill. Keep it tight, not vague.</p>
+
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 3: Advanced Controls</h3>
-      <p className="text-slate-300 mb-4"><strong>Fine-Tune Your Generation</strong><br />Below the basic inputs, you'll find:<br />- <strong>Explicit Language Toggle</strong>: Enable for adult content when appropriate to the artist<br />- <strong>Rhyme Schemes</strong>: Select multiple schemes to influence the rhyming patterns<br />- <strong>Temperature</strong>: Higher values (1.5-2.0) = more creative, lower (0.5-1.0) = more focused<br />- <strong>Top-p</strong>: Controls vocabulary diversity (0.8-1.0 recommended)<br />I suggest a temp of 1.2 and top p of .9 for a good balance of creativity and coherence.</p>
-      
+      <p className="text-slate-300 mb-4">Tweak:<br />- <strong>Explicit toggle</strong> (don't be shy)<br />- <strong>Rhyme schemes</strong> (no AABB, please)<br />- <strong>Temperature</strong> & <strong>Top-p</strong> (more chaos = more magic)</p>
+
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 4: Generate Your First Lyrics</h3>
-      <p className="text-slate-300 mb-4"><strong>Two Ways to Create</strong><br />You can generate lyrics by:<br />1. <strong>Using the form</strong>: Fill out the structured inputs and click send<br />2. <strong>Free-form prompt</strong>: Type directly in the bottom text area for full creative control<br />3. <strong>Combination</strong>: Use both form inputs AND add additional instructions below</p>
-      
+      <p className="text-slate-300 mb-4">Either fill out the form or type your wild idea in the box at the bottom. Or both. Then hit send.</p>
+
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 5: Iterate and Refine</h3>
-      <p className="text-slate-300 mb-6"><strong>Perfect Your Creation</strong><br />- Each response includes a <strong>copy button</strong> for easy saving<br />- Continue the conversation to refine, extend, or modify lyrics<br />- Ask for specific changes: "Make it more aggressive" or "Add a bridge section"</p>
-      
+      <p className="text-slate-300 mb-6">Copy button is there. Ask for tweaks. Push it until it hits right.</p>
+
       <h2 className="text-xl font-semibold text-slate-200 mb-2">Sandbox Mode Tour</h2>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 6: Switch to Sandbox</h3>
-      <p className="text-slate-300 mb-4"><strong>Advanced Lyric Construction</strong><br />Sandbox mode gives you granular control over every aspect of lyric generation with a drag-and-drop interface for building complete songs.</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 7: Dial-a-Poet Controls</h3>
-      <p className="text-slate-300 mb-4"><strong>Precision Creative Controls</strong><br />The left panel contains advanced settings:<br />- <strong>Metaphor Density</strong>: 0-100% scale for how abstract/literal the lyrics should be<br />- <strong>Rhyme Complexity</strong>: Control internal rhymes vs. end rhymes<br />- <strong>Temperature & Top-p</strong>: Same as Ghostwriter mode for consistency</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 8: Style Palette Analyzer</h3>
-      <p className="text-slate-300 mb-4"><strong>Learn from Existing Lyrics</strong><br />- Paste any lyrics into the Style Palette section<br />- Click "Analyze" to extract the artistic DNA<br />- Use the analysis as reference for your own generations<br />- Perfect for studying and replicating specific artists' styles</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 9: Sculpting Tools</h3>
-      <p className="text-slate-300 mb-4"><strong>Advanced Constraints</strong><br />Fine-tune your output with:<br />- <strong>Forbidden Words</strong>: Comma-separated list of words to avoid<br />- <strong>Lens System</strong>: Apply perspective filters (first person, nostalgic tone, etc.)<br />- <strong>Rhyme Schemes</strong>: Same as Ghostwriter but applies to all sections</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 10: Section-Based Building</h3>
-      <p className="text-slate-300 mb-4"><strong>Construct Your Song</strong><br />The main workspace shows draggable song sections:<br />- <strong>Drag to reorder</strong>: Use the grip handle to move sections around<br />- <strong>Configure each section</strong>: Set type (Verse, Chorus, etc.), number of bars, and density<br />- <strong>Individual prompts</strong>: Each section can have its own creative direction<br />- <strong>Generate individually</strong>: Click the brain icon to generate that specific section</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 11: Section Management</h3>
-      <p className="text-slate-300 mb-6"><strong>Build Complex Structures</strong><br />- <strong>Add sections</strong>: Click the dashed "Add Section" button<br />- <strong>Delete sections</strong>: Use the trash icon on unwanted parts<br />- <strong>Bars</strong>: Set exact number of lines (8, 16, 32, etc.)<br />- <strong>Density</strong>: Sparse (5-7 words/line), Normal (8-12), Dense (13+ words/line)</p>
-      
-      <h2 className="text-xl font-semibold text-slate-200 mb-2">Pro Tips</h2>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 12: Best Practices</h3>
-      <p className="text-slate-300 mb-4"><strong>Getting the Best Results</strong><br /><strong>For Artist Emulation:</strong><br />- Be specific with artist names<br />- Include era/album references ("2016 Frank Ocean" vs "2012 Frank Ocean")<br />- Mention specific songs as style references<br /><strong>For Original Content:</strong><br />- Combine multiple artists ("Blend Kendrick's wordplay with Frank Ocean's melancholy")<br />- Use specific imagery and themes rather than generic concepts<br />- Experiment with temperature settings for different creative outputs<br /><strong>For Technical Control:</strong><br />- Use higher metaphor density for abstract, artistic lyrics<br />- Lower rhyme complexity for cleaner, pop-style hooks<br />- Adjust temperature based on desired unpredictability</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 13: Workflow Suggestions</h3>
-      <p className="text-slate-300 mb-6"><strong>Efficient Creative Process</strong><br /><strong>Quick Creation (Ghostwriter):</strong><br />1. Set artist and theme<br />2. Choose length and mood<br />3. Generate and iterate<br /><strong>Detailed Construction (Sandbox):</strong><br />1. Analyze reference lyrics for style palette<br />2. Set up song structure with appropriate sections<br />3. Configure each section's parameters<br />4. Generate section by section<br />5. Refine with conversation in Ghostwriter if needed</p>
-      
-      <h2 className="text-xl font-semibold text-slate-200 mb-2">Troubleshooting</h2>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 14: Common Issues</h3>
-      <p className="text-slate-300 mb-4"><strong>When Things Don't Work as Expected</strong><br /><strong>Generic or "AI-sounding" output:</strong><br />- Increase temperature slightly<br />- Add more specific artist references<br />- Use the forbidden words feature to avoid clichés<br /><strong>Wrong style or tone:</strong><br />- Be more specific in artist description<br />- Add mood tags and era references<br />- Use the style palette analyzer on reference lyrics first<br /><strong>Technical issues:</strong><br />- Check your internet connection<br />- Try refreshing if generation stalls<br />- Reduce complexity if experiencing timeouts</p>
-      
-      <h2 className="text-xl font-semibold text-slate-200 mb-2">Final Tips</h2>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 15: Mastering VRS/A</h3>
-      <p className="text-slate-300 mb-4"><strong>Advanced Techniques</strong><br />- <strong>Chain generations</strong>: Use output from one section as input for the next<br />- <strong>Style blending</strong>: Combine multiple artists in prompts<br />- <strong>Reference mixing</strong>: Paste existing lyrics as style reference in free-form input<br />- <strong>Iterative refinement</strong>: Start broad, then narrow down with specific requests</p>
-      
-      <p className="text-slate-300 mb-6"><strong>Remember:</strong> VRS/A learns from your conversation within each session. The more context you provide about what you like or want to change, the better your results will be!</p>
-      
-      <h3 className="text-lg font-medium text-slate-200 mb-2">Ready to Create?</h3>
-      <p className="text-slate-300">Start with Ghostwriter mode for your first generation, then explore Sandbox for more complex projects. Happy writing!</p>
+
+      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 6: Advanced Structure</h3>
+      <p className="text-slate-300 mb-4">Drag sections. Set bars and density. Micromanage your song like you’re producing in Ableton on a cracked license.</p>
+
+      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 7: Dial-a-Poet</h3>
+      <p className="text-slate-300 mb-4">Adjust metaphor density and rhyme complexity to taste. If you don’t know what those mean, guess and test.</p>
+
+      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 8: Style Palette</h3>
+      <p className="text-slate-300 mb-4">Paste existing lyrics to get a breakdown of that artist’s DNA. Useful for mimicry and theft (the legal kind).</p>
+
+      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 9: Sculpting</h3>
+      <p className="text-slate-300 mb-4">Set forbidden words. Apply creative "lenses." If your lyrics keep mentioning shadows or mirrors, this is your fix.</p>
+
+      <h3 className="text-lg font-medium text-slate-200 mb-2">Step 10: Generate Sections</h3>
+      <p className="text-slate-300 mb-6">Each section gets its own prompt and settings. Hit the brain icon to generate. Trash what sucks. Repeat.</p>
+
+      <h2 className="text-xl font-semibold text-slate-200 mb-2">Still Reading?</h2>
+      <p className="text-slate-300 mb-4">You’re now over 1,000 words into a walkthrough for a lyric generator. Either you’re lost or you love it.</p>
+      <p className="text-slate-300">If it’s the second one: <a href="https://coff.ee/vrsa" target="_blank" rel="noopener noreferrer" className="underline text-yellow-400 hover:text-yellow-300">tip me</a>. Or Cash App <span className="font-mono text-green-400">$chrisdickinson02</span>. Or don't—and pray the API doesn’t get rate-limited again.</p>
     </div>
   </div>
 );
