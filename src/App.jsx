@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 // Header Component with Navigation
 const Header = ({ currentPage, setCurrentPage }) => {
-    const navItems = ['Ghostwriter', 'Sandbox', 'Guide'];
+    const navItems = ['Ghostwriter', 'Sandbox', 'Guide', 'Terms'];
     return (
         <header className="p-4 border-b border-slate-700/50 text-center bg-slate-900 z-10 shrink-0 flex justify-between items-center">
             <div>{/* Spacer */}</div>
@@ -432,22 +432,18 @@ This section is now for secondary rules.
             <div ref={chatEndRef} />
           </div>
         </main>
-        <footer className="p-4 md:p-6 bg-slate-900 border-t border-slate-700/50 shrink-0">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center bg-slate-800 border border-slate-700 rounded-lg p-2">
-              <textarea
-                className="flex-grow bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none resize-none p-2"
-                value={freeFormInput}
-                onChange={(e) => setFreeFormInput(e.target.value)}
-                onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }}}
-                placeholder="Add to the form inputs or type your full request here..."
-                rows="2"
-              />
-              <button onClick={sendMessage} disabled={isLoading} className="ml-4 p-3 bg-indigo-600 rounded-lg hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-400">
-                <CornerDownLeft className="h-6 w-6" />
-              </button>
-            </div>
-          </div>
+        <footer className="p-2 bg-slate-900 border-t border-slate-700/50 shrink-0 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
+          <span>2025 VRS/A. All rights reserved. Built independently. Not affiliated with any label, artist, or platform. Use at your own risk. Don’t be weird with it.</span>
+          <span className="mx-2">|</span>
+          <span
+            className="underline text-indigo-400 hover:text-indigo-300 cursor-pointer select-none"
+            onClick={() => setCurrentPage('terms')}
+            tabIndex={0}
+            role="link"
+            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setCurrentPage('terms'); }}
+          >
+            Terms of Service
+          </span>
         </footer>
       </div>
     </div>
@@ -854,6 +850,103 @@ const STYLE_PALETTE_PROMPT = `You are a world-class musicologist and lyric analy
     );
 };
 
+// --- Footer Component ---
+const Footer = ({ onTermsClick }) => (
+  <footer className="p-2 bg-slate-900 border-t border-slate-700/50 shrink-0 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
+    <span>2025 VRS/A. All rights reserved. Built independently. Not affiliated with any label, artist, or platform. Use at your own risk. Don’t be weird with it.</span>
+    <span className="mx-2">|</span>
+    <span
+      className="underline text-indigo-400 hover:text-indigo-300 cursor-pointer select-none"
+      onClick={onTermsClick}
+      tabIndex={0}
+      role="link"
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onTermsClick(); }}
+    >
+      Terms of Service
+    </span>
+  </footer>
+);
+
+// --- Terms of Service Page Component ---
+const TermsOfService = () => (
+  <div className="flex flex-col items-center justify-center min-h-full bg-slate-900 p-8">
+    <div className="max-w-4xl w-full bg-slate-800 rounded-lg shadow-lg p-8 border border-slate-700/50">
+      <h1 className="text-3xl font-bold text-indigo-400 mb-4">VRS/A Terms of Service</h1>
+      <div className="text-slate-300 text-sm whitespace-pre-line">
+        {`
+Last updated: June 26, 2025
+
+By accessing or using the VRS/A web application ("VRS/A", "we", "us", or "our"), you agree to be bound by the following Terms of Service ("Terms"). If you do not agree to these Terms, do not use the application.
+
+1. Acceptance of Terms
+
+By using VRS/A, you acknowledge that you have read, understood, and agree to be bound by these Terms, along with our Privacy Policy. These Terms apply to all users, including developers, musicians, writers, and any other individuals accessing the app.
+
+2. Usage Guidelines
+
+You agree not to use VRS/A for any purpose that:
+
+Violates any applicable local, state, national, or international law;
+
+Involves hate speech, threats, or harassment;
+
+Promotes violence or harm toward any group or individual;
+
+Generates or distributes unlawful, libelous, defamatory, or obscene content;
+
+Attempts to reverse-engineer, clone, or extract source materials from the app;
+
+Abuses the API or infrastructure in a way that degrades service for others.
+
+We reserve the right to suspend or ban any user for violations, without notice.
+
+3. No Warranty / "As-Is" Clause
+
+VRS/A is provided "as-is" and "as-available" without warranties of any kind, express or implied. This includes but is not limited to merchantability, fitness for a particular purpose, and non-infringement.
+
+We do not guarantee the app will be error-free, uninterrupted, or that the content generated will be accurate, appropriate, or safe. You use it at your own risk.
+
+4. Limitation of Liability
+
+To the maximum extent permitted by law, VRS/A and its creator(s) shall not be liable for any direct, indirect, incidental, special, consequential, or exemplary damages, including but not limited to loss of data, revenue, or business, resulting from:
+
+The use or inability to use the app;
+
+Any content generated through the app;
+
+Unauthorized access to or alteration of your data;
+
+Any bugs, errors, or security issues.
+
+Using VRS/A does not create any warranty, relationship, or obligation between you and the creator beyond what is explicitly stated here.
+
+5. User Responsibility
+
+You are solely responsible for any content you generate using VRS/A. If you choose to publish, share, or monetize content created through the app, you assume full legal responsibility for how that content is used.
+
+You also agree not to represent VRS/A as an official service of, or affiliated with, any musical artist, label, or company.
+
+6. Intellectual Property
+
+All branding, UI design, logic, and backend infrastructure related to VRS/A remain the intellectual property of the creator. You may not reproduce, repurpose, or clone any part of the app without explicit written permission.
+
+Generated lyrical content is not claimed by VRS/A, and users may retain or disclaim ownership as they see fit.
+
+7. Modifications to Terms
+
+We reserve the right to update or modify these Terms at any time. Changes will be posted on this page with a revised "last updated" date. Your continued use after such changes constitutes acceptance.
+
+8. Contact
+
+Questions or legal inquiries? Email: vrsa.app@mailfence.com
+
+By using VRS/A, you accept these Terms and agree not to sue, whine, or attempt to hold the app liable for your bad lyrics, broken dreams, or existential crises.
+        `}
+      </div>
+    </div>
+  </div>
+);
+
 // --- Guide Page Component ---
 const Guide = () => (
   <div className="flex flex-col items-center justify-center min-h-full bg-slate-900 p-8">
@@ -899,7 +992,7 @@ const Guide = () => (
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 10: Generate Sections</h3>
       <p className="text-slate-300 mb-6">Each section card has its own prompt box. Hit the brain icon to generate lyrics for just that section. Trash what sucks. Repeat.</p>
 
-      <h2 className="text-xl font-semibold text-slate-200 mb-2">Pro-Tips for Better Output</h2>
+      <h2 className="text-xl font-semibold text-slate-200 mt-6 mb-2">Pro-Tips for Better Output</h2>
       <p className="text-slate-300 mb-4"><strong>Vague prompts get vague results. Specific prompts get specific results.</strong><br/>- "A sad song" is okay. "A song in the style of Frank Ocean's 'Blonde' about the melancholy of seeing your ex's car parked outside a house you don't recognize" is much better.<br/>- Don't just name an artist; name their era. "2001 Radiohead" is a world away from "1995 Radiohead."<br/>- Blend styles: "Write a verse with the storytelling of Kendrick Lamar but the melodic sensibility of a 2010's Lana Del Rey chorus."</p>
       
       <h2 className="text-xl font-semibold text-slate-200 mt-6 mb-2">Rhyme Scheme & Lyrical Device Guide</h2>
@@ -945,20 +1038,19 @@ const Guide = () => (
 // --- Main App Component ---
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('ghostwriter'); // 'ghostwriter' or 'sandbox' or 'guide'
+  const [currentPage, setCurrentPage] = useState('ghostwriter'); // 'ghostwriter' or 'sandbox' or 'guide' or 'terms'
   const [selectedRhymeSchemes, setSelectedRhymeSchemes] = useState([]);
 
   return (
-    // 1. REMOVED `overflow-hidden` from this line
     <div className="bg-slate-900 text-white font-sans h-screen flex flex-col">
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-
-      {/* 2. ADDED `overflow-y-auto` to this line */}
       <div className="flex-1 min-h-0 overflow-y-auto">
         {currentPage === 'ghostwriter' && <Ghostwriter selectedRhymeSchemes={selectedRhymeSchemes} setSelectedRhymeSchemes={setSelectedRhymeSchemes} />}
         {currentPage === 'sandbox' && <Sandbox selectedRhymeSchemes={selectedRhymeSchemes} setSelectedRhymeSchemes={setSelectedRhymeSchemes} />}
         {currentPage === 'guide' && <Guide />}
+        {currentPage === 'terms' && <TermsOfService />}
       </div>
+      <Footer onTermsClick={() => setCurrentPage('terms')} />
     </div>
   );
 };
