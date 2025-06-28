@@ -874,7 +874,7 @@ const Guide = () => (
       <p className="text-slate-300 mb-4">Left panel. Set:<br />- <strong>Artist Name</strong><br />- <strong>Core Theme</strong><br />- <strong>Mood</strong><br />- <strong>Length</strong><br />You know the drill. Keep it tight, not vague.</p>
 
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 3: Advanced Controls</h3>
-      <p className="text-slate-300 mb-4">Tweak:<br />- <strong>Explicit toggle</strong> (don't be shy)<br />- <strong>Rhyme schemes</strong> (no AABB, please)<br />- <strong>Temperature</strong> & <strong>Top-p</strong> (more chaos = more magic)</p>
+      <p className="text-slate-300 mb-4">Tweak:<br />- <strong>Explicit toggle</strong> (don't be shy)<br />- <strong>Rhyme schemes</strong> (no AABB, please)<br />- <strong>Temperature</strong> & <strong>Top-p</strong> (I suggest a temp of 1.2 and top p of .9 for a good balance of creativity and coherence.)</p>
 
       <h3 className="text-lg font-medium text-slate-200 mb-2">Step 4: Generate Your First Lyrics</h3>
       <p className="text-slate-300 mb-4">Either fill out the form or type your wild idea in the box at the bottom. Or both. Then hit send.</p>
