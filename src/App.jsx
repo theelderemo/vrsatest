@@ -35,7 +35,32 @@ const Header = ({ currentPage, setCurrentPage }) => {
 // --- Ghostwriter Page Components ---
 
 const rhymeSchemesList = [
-  "Alternate rhyme", "Ballade", "Monorhyme", "Triplet", "Limerick", "Sonnet", "Enclosed rhyme", "Four line rhyme schemes", "Terza rima", "Coupled rhyme", "Couplet", "End rhyme", "Eye rhyme", "Internal rhyme", "Slant rhyme", "Villanelle", "AABB", "ABBA", "Feminine rhyme", "Exact rhyme", "Imperfect or half rhyme", "Keatsian Ode", "Perfect rhyme"
+  "AABB", 
+  "ABBA",
+  "Alternate rhyme",
+  "Anapestic rhyme",
+  "Assonance",
+  "Ballade",
+  "Broken rhyme",
+  "Chain rhyme",
+  "Consonance",
+  "Dactylic rhyme",
+  "Eye rhyme",
+  "Feminine rhyme",
+  "Four line rhyme schemes",
+  "Head rhyme",
+  "Internal rhyme",
+  "Keatsian Ode",
+  "Limerick",
+  "Masculine rhyme",
+  "Monorhyme",
+  "Perfect rhyme",
+  "Sibilant rhyme",
+  "Slant rhyme",
+  "Sonnet",
+  "Terza rima",
+  "Triplet",
+  "Villanelle",
 ];
 
 const StructuredInputForm = ({ 
