@@ -432,19 +432,23 @@ This section is now for secondary rules.
             <div ref={chatEndRef} />
           </div>
         </main>
-        <footer className="p-2 bg-slate-900 border-t border-slate-700/50 shrink-0 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
-          <span>2025 VRS/A. All rights reserved. Built independently. Not affiliated with any label, artist, or platform. Use at your own risk. Don’t be weird with it.</span>
-          <span className="mx-2">|</span>
-          <span
-            className="underline text-indigo-400 hover:text-indigo-300 cursor-pointer select-none"
-            onClick={() => setCurrentPage('terms')}
-            tabIndex={0}
-            role="link"
-            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') setCurrentPage('terms'); }}
-          >
-            Terms of Service
-          </span>
-        </footer>
+        <div className="p-4 md:p-6 bg-slate-900 border-t border-slate-700/50 shrink-0">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center bg-slate-800 border border-slate-700 rounded-lg p-2">
+              <textarea
+                className="flex-grow bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none resize-none p-2"
+                value={freeFormInput}
+                onChange={(e) => setFreeFormInput(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }}}
+                placeholder="Add to the form inputs or type your full request here..."
+                rows="2"
+              />
+              <button onClick={sendMessage} disabled={isLoading} className="ml-4 p-3 bg-indigo-600 rounded-lg hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                <CornerDownLeft className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
