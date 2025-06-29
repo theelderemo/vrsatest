@@ -247,7 +247,7 @@ SECTION CONSTRAINTS
 3. Self-critique: “Would {artist_name} say this?” and “Does this read like boilerplate AI?” Revise until raw & human.
 
 BANNED WORD LIST
-rust, glitch, code, king, queen, throne, abyss, void, echo, shadow, whisper, mirror, silent, empty, plus any blatant “AI giveaway” terms.
+rust, static, glitch, code, king, queen, throne, abyss, void, echo, shadow, whisper, mirror, silent, empty, plus any blatant “AI giveaway” terms.
 
 OUTPUT FORMAT
 Just the lyric lines (one line = one bar).  
@@ -308,7 +308,7 @@ artist_name-style, main_genre, subgenre, vocal_gender, vocal_description, mood o
 
 STYLE & CONSTRAINTS
 This section is now for secondary rules.
-• Hard ban on: rust, glitch, code, king, queen, throne, abyss, void, echo, shadow, whisper, mirror, silent, empty, plus any obvious “AI giveaway” words.  
+• NEVER USE these banned words: rust, static, glitch, code, king, queen, throne, abyss, void, echo, shadow, whisper, mirror, silent, empty, plus any obvious “AI giveaway” words.  
 • Never use parentheses ( ); always use brackets [ ] for meta. It is okay to use ( ) for ad libs and backing vocals.
 • If explicit_language is 'yes', you MUST use profanity and explicit themes appropriate to the artist. This is not optional.
 • Provide solely the requested lyrical output – zero meta-commentary, zero apologies, zero explanations.`;
