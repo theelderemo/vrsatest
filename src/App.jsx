@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Bot, User, CornerDownLeft, LoaderCircle, FileText, Mic, Smile, ListCollapse, Menu, X, GripVertical, Settings, Palette, PenSquare, Trash2, PlusCircle, BrainCircuit, ChevronDown, RotateCcw, Copy, Check } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
+import { UserProvider, useUser } from './UserProvider';
+import AuthComponent from './Auth';
+import { StyleKitProvider } from './StyleKitProvider';
+import StyleKitMarketplace from './StyleKitMarketplace';
+import StyleKitDetail from './StyleKitDetail';
+import CreateStyleKit from './CreateStyleKit';
 
 // --- Helper Components ---
 
 // Header Component with Navigation
 const Header = ({ currentPage, setCurrentPage }) => {
-    const navItems = ['Ghostwriter', 'Sandbox', 'Guide', 'Terms'];
+    const { user, loading, signOut } = useUser();
+    const navItems = ['Ghostwriter', 'Sandbox', 'Guide', 'Kits', 'Terms'];
     return (
         <header className="p-4 border-b border-slate-700/50 text-center bg-slate-900 z-10 shrink-0 flex justify-between items-center">
             <div>{/* Spacer */}</div>
@@ -27,6 +34,14 @@ const Header = ({ currentPage, setCurrentPage }) => {
                         {item}
                     </button>
                 ))}
+                {/* Auth/Logout Button */}
+                {!loading && (
+                  user ? (
+                    <button className="ml-2 px-3 py-2 text-sm font-medium rounded-md bg-green-700 text-white" onClick={signOut}>Logout</button>
+                  ) : (
+                    <button className="ml-2 px-3 py-2 text-sm font-medium rounded-md bg-indigo-700 text-white" onClick={() => setCurrentPage('login')}>Login</button>
+                  )
+                )}
             </nav>
         </header>
     );
@@ -1042,20 +1057,49 @@ const Guide = () => (
 // --- Main App Component ---
 
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('ghostwriter'); // 'ghostwriter' or 'sandbox' or 'guide' or 'terms'
+  const [currentPage, setCurrentPage] = useState('ghostwriter');
   const [selectedRhymeSchemes, setSelectedRhymeSchemes] = useState([]);
+  const [kitView, setKitView] = useState('marketplace'); // 'marketplace' | 'detail' | 'create'
+  const [activeKit, setActiveKit] = useState(null);
+
+  // Kits page logic
+  const handleSelectKit = (kit) => {
+    setActiveKit(kit);
+    setKitView('detail');
+  };
+  const handleBackToMarketplace = () => {
+    setActiveKit(null);
+    setKitView('marketplace');
+  };
+  const handleCreateKit = () => {
+    setKitView('create');
+  };
 
   return (
-    <div className="bg-slate-900 text-white font-sans h-screen flex flex-col">
-      <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <div className="flex-1 min-h-0 overflow-y-auto">
-        {currentPage === 'ghostwriter' && <Ghostwriter selectedRhymeSchemes={selectedRhymeSchemes} setSelectedRhymeSchemes={setSelectedRhymeSchemes} />}
-        {currentPage === 'sandbox' && <Sandbox selectedRhymeSchemes={selectedRhymeSchemes} setSelectedRhymeSchemes={setSelectedRhymeSchemes} />}
-        {currentPage === 'guide' && <Guide />}
-        {currentPage === 'terms' && <TermsOfService />}
-      </div>
-      <Footer onTermsClick={() => setCurrentPage('terms')} />
-    </div>
+    <UserProvider>
+      <StyleKitProvider>
+        <div className="bg-slate-900 text-white font-sans h-screen flex flex-col">
+          <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <div className="flex-1 min-h-0 overflow-y-auto">
+            {currentPage === 'kits' && kitView === 'marketplace' && (
+              <StyleKitMarketplace onSelectKit={handleSelectKit} onCreateKit={handleCreateKit} />
+            )}
+            {currentPage === 'kits' && kitView === 'detail' && (
+              <StyleKitDetail kit={activeKit} onBack={handleBackToMarketplace} />
+            )}
+            {currentPage === 'kits' && kitView === 'create' && (
+              <CreateStyleKit onBack={handleBackToMarketplace} />
+            )}
+            {currentPage === 'ghostwriter' && <Ghostwriter selectedRhymeSchemes={selectedRhymeSchemes} setSelectedRhymeSchemes={setSelectedRhymeSchemes} />}
+            {currentPage === 'sandbox' && <Sandbox selectedRhymeSchemes={selectedRhymeSchemes} setSelectedRhymeSchemes={setSelectedRhymeSchemes} />}
+            {currentPage === 'guide' && <Guide />}
+            {currentPage === 'terms' && <TermsOfService />}
+            {currentPage === 'login' && <AuthComponent />}
+          </div>
+          <Footer onTermsClick={() => setCurrentPage('terms')} />
+        </div>
+      </StyleKitProvider>
+    </UserProvider>
   );
 };
 
