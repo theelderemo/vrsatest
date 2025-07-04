@@ -249,8 +249,7 @@ Abandon predictable end-rhymes. Treat rhyme as a rhythmic weapon, not punctuatio
 
 SECTION CONSTRAINTS
 • **bars (lines):** Output *exactly* the requested number of lines—no headings, no notes.  
-• **density:**  
-  – Sparse ≈ 5-7 words / bar  
+• **density:** – Sparse ≈ 5-7 words / bar  
   – Normal ≈ 8-12 words / bar  
   – Dense ≈ 13+ words / bar  
   Minor ±1 variance is fine for natural phrasing.  
@@ -281,6 +280,19 @@ const Ghostwriter = ({ selectedRhymeSchemes, setSelectedRhymeSchemes }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false); // mobile sidebar state
   const [temperature, setTemperature] = useState(1);
   const [topP, setTopP] = useState(1);
+
+  // --- START: New state and message list for CTA ---
+  const [generationCount, setGenerationCount] = useState(0);
+  const [ctaMessage, setCtaMessage] = useState('');
+
+  const sarcasticMessages = [
+    'Keep clicking. I’ll just sell another kidney.',
+    "Every time you click 'Generate' I lose 8 cents. Just saying.",
+    'If I had a nickel for every time you clicked ‘Generate’... I could afford your clicks.',
+    'Built with love, sarcasm, and a dwindling bank account.',
+    'You tip your bartender. I just wrote you a verse in Ye’s voice. Think about it.'
+  ];
+  // --- END: New state and message list for CTA ---
 
   const systemPrompt = `ROLE
 You are an elite ghost-writer, a lyrical method actor. Your entire purpose is to channel an artist’s “lyrical DNA” with uncanny realism, producing lyrics that feel 100 % authentic yet entirely new.
@@ -348,9 +360,16 @@ This section is now for secondary rules.
       setLengthHint('single');
       setIsExplicit(false);
       setFreeFormInput('');
+      setCtaMessage(''); // Also reset the message on form reset
   };
 
   const sendMessage = async () => {
+    // --- START: CTA Logic - Clear message on new generation ---
+    if (ctaMessage) {
+        setCtaMessage('');
+    }
+    // --- END: CTA Logic ---
+
     const promptParts = [];
     if (artistName) promptParts.push(`artist_name: ${artistName}`);
     if (coreTheme) promptParts.push(`core_theme: ${coreTheme}`);
@@ -390,6 +409,17 @@ This section is now for secondary rules.
       const data = await response.json();
       let botResponse = data.content || 'Error: Could not retrieve a valid response.';
       setMessages(prev => [...prev, { role: 'assistant', content: botResponse }]);
+
+      // --- START: CTA Logic - Set message after successful generation ---
+      const newCount = generationCount + 1;
+      setGenerationCount(newCount);
+
+      if (newCount > 0 && newCount % 3 === 0) {
+        const randomIndex = Math.floor(Math.random() * sarcasticMessages.length);
+        setCtaMessage(sarcasticMessages[randomIndex]);
+      }
+      // --- END: CTA Logic ---
+
     } catch (error) {
       console.error("Failed to fetch from Supabase Edge Function:", error);
       setMessages(prev => [...prev, { role: 'assistant', content: `An error occurred: ${error.message}` }]);
@@ -447,7 +477,20 @@ This section is now for secondary rules.
             <div ref={chatEndRef} />
           </div>
         </main>
+        
+        {/* --- START: Wrapper for CTA and Input Box --- */}
         <div className="p-4 md:p-6 bg-slate-900 border-t border-slate-700/50 shrink-0">
+          
+          {/* CTA Message Display Logic */}
+          {ctaMessage && (
+            <div className="max-w-4xl mx-auto mb-4 text-center">
+              <p className="text-red-500 font-semibold italic animate-pulse">
+                {ctaMessage}
+              </p>
+            </div>
+          )}
+
+          {/* Existing Input Box */}
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center bg-slate-800 border border-slate-700 rounded-lg p-2">
               <textarea
@@ -464,6 +507,7 @@ This section is now for secondary rules.
             </div>
           </div>
         </div>
+        {/* --- END: Wrapper for CTA and Input Box --- */}
       </div>
     </div>
   );
