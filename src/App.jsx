@@ -939,7 +939,7 @@ const TermsOfService = () => (
       <h1 className="text-3xl font-bold text-indigo-400 mb-4">VRS/A Terms of Service</h1>
       <div className="text-slate-300 text-sm whitespace-pre-line">
         {`
-Last updated: June 26, 2025
+Last updated: August 17, 2025
 
 By accessing or using the VRS/A web application ("VRS/A", "we", "us", or "our"), you agree to be bound by the following Terms of Service ("Terms"). If you do not agree to these Terms, do not use the application.
 
@@ -997,11 +997,17 @@ All branding, UI design, logic, and backend infrastructure related to VRS/A rema
 
 Generated lyrical content is not claimed by VRS/A, and users may retain or disclaim ownership as they see fit.
 
-7. Modifications to Terms
+7. Privacy & Data Collection
+
+VRS/A is designed with user privacy as a priority. The application does not use any third-party trackers or advertising cookies. The core functionality of the app is available without an account and does not require you to provide personal information.
+
+If you choose to create an account, your authentication is handled securely by Supabase. We do not sell or share your data.
+
+8. Modifications to Terms
 
 We reserve the right to update or modify these Terms at any time. Changes will be posted on this page with a revised "last updated" date. Your continued use after such changes constitutes acceptance.
 
-8. Contact
+9. Contact
 
 Questions or legal inquiries? Email: vrsa.app@mailfence.com
 
