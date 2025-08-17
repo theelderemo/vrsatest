@@ -1,12 +1,59 @@
-# React + Vite
+# VRS/A
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="https://vrsa.vercel.app/vite.svg" alt="VRS/A Logo" width="120">
+</div>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>An AI lyric tool for people who are tired of AI lyrics that suck.</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <strong><a href="https://vrsa.vercel.app/">Go Use It</a></strong>
+</p>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is the official repo for **VRS/A**. I built this because I was sick of AI writers giving me soulless, spaghetti-rhyme soup. This is my attempt to build an instrument, not just a content mill. It’s designed to be a co-writer that understands style, cadence, and the difference between a good rhyme and a lazy one.
+
+It’s free, it’s probably buggy, and it’s built by one guy on a diet of caffeine and spite.
+
+## So, What Does It Actually Do?
+
+* **Ghostwriter Mode:** Tell it you want a verse in the style of "Kendrick on To Pimp a Butterfly" and it'll actually *try*.
+* **The Sandbox:** Build songs like you're in a DAW. Drag-and-drop sections, set bar counts, control the lyrical density. This is where the real work happens.
+* **Analyze an Artist's Soul:** Paste in lyrics from anyone and the **Style Palette** will tell you what makes them tick. For mimicry and theft (the legal kind).
+* **Chaos Knobs:** Use the **Metaphor Density** and **Rhyme Complexity** sliders to go from Johnny Cash to Aesop Rock.
+* **Avoid Clichés:** Use **Forbidden Words** to stop the AI from talking about shadows and mirrors.
+
+## The Tech Stack (What Holds It Together)
+
+* **Frontend:** React / Vite
+* **Styling:** Tailwind CSS
+* **Backend:** Supabase (for auth and the AI magic via Edge Functions)
+
+## You Wanna Run This Thing Locally?
+
+Sure. Knock yourself out. You will need your own ai model or such, either local ran or azure based, to run this on your own.
+
+1.  Clone it: `git clone https://github.com/theelderemo/vrsatest.git`
+2.  Install the dependencies: `npm install`
+3.  You'll need a `.env` file with your own Supabase keys. Good luck.
+    ```
+    VITE_SUPABASE_URL=...
+    VITE_SUPABASE_ANON_KEY=...
+    ```
+4.  Fire it up: `npm run dev`
+
+## The Community (The Real Reason We're Here)
+
+The real feedback happens here. The mods on Reddit hate free tools, so we made our own clubhouse.
+
+* **Discord:** [[Discord Server]](https://discord.gg/K3kTQPhh)
+* **Subreddit:** [[r/vrsa]](https://www.reddit.com/r/VRSA/)
+
+## Keep The Lights On
+
+This thing runs on fumes and the occasional tip. If it helps you break a writer's block or you just want to fund my next burnout, it's appreciated.
+
+<a href="https://coff.ee/vrsa" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
