@@ -350,7 +350,7 @@ This section is now for secondary rules.
     if (messages.length === 0) {
       setMessages([{
         role: 'assistant',
-        content: 'VRS/A initialized. Use the form on the left or the text input below to begin lyrical emulation.'
+        content: 'Join me on r/vrsa or Discord, updates coming. Links are at the top. Use the form on the left or the text input below to begin lyrical emulation.'
       }]);
     }
   }, [messages.length]);
