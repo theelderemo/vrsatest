@@ -20,7 +20,9 @@ const Header = ({ currentPage, setCurrentPage }) => {
             <div className="text-center">
                 <h1 className="text-3xl font-bold text-indigo-400">VRS/A</h1>
                 <div className="mt-2 flex flex-col items-center space-y-1">
-                  <span className="text-xs text-slate-400 font-semibold">Keep it free.</span>
+                  <span className="text-xs text-slate-400 font-semibold">
+  Updates Coming. Join me on <a href="https://www.reddit.com/r/VRSA/" target="_blank" rel="noopener noreferrer">r/vrsa</a> or <a href="https://discord.gg/FQ6XGNf53P" target="_blank" rel="noopener noreferrer">discord</a>.
+</span>
                   <span className="text-xs text-slate-400">Tip on <a href="https://coff.ee/vrsa" target="_blank" rel="noopener noreferrer" className="underline text-yellow-400 hover:text-yellow-300">BuyMeaCoffee</a> or Cash App: <span className="font-mono text-green-400">chrisdickinson02</span></span>
                 </div>
             </div>
