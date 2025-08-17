@@ -26,6 +26,13 @@ It’s free, it’s probably buggy, and it’s built by one guy on a diet of caf
 * **Chaos Knobs:** Use the **Metaphor Density** and **Rhyme Complexity** sliders to go from Johnny Cash to Aesop Rock.
 * **Avoid Clichés:** Use **Forbidden Words** to stop the AI from talking about shadows and mirrors.
 
+## 🔒 Privacy First
+
+VRS/A was built to be a creative tool, not a data-harvesting machine.
+* **Zero Trackers:** No Google Analytics, no marketing pixels, no tracking scripts of any kind.
+* **No Cookies:** The site does not store any cookies in your browser.
+* **Optional Login:** User accounts (via Supabase) are only required for features like creating and sharing Style Kits. The core tools are accessible without an account.
+
 ## The Tech Stack (What Holds It Together)
 
 * **Frontend:** React / Vite
